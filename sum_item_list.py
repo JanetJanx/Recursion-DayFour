@@ -5,14 +5,10 @@ def sum_items(list_number):
         if type(item) == int:
             sum += item
         elif isinstance(item, list):
-                if type(sum_items(item)) == int:
-                    sum += sum_items(item)
-                else:
-                    return "Inside List should only have numbers"
-        else:
-            return "List should only have numbers"
+            sum += sum_items(item)
     
     return sum 
 
+#diplay values
 print (sum_items([1,5,9,[3,'n']]))
 print (sum_items([3,7,8,[8,9]]))
